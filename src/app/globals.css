@@ -2,25 +2,131 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+
+  --color-brand-50: #eff8ff;
+  --color-brand-100: #dceffe;
+  --color-brand-200: #b3e0fd;
+  --color-brand-300: #75c8fb;
+  --color-brand-400: #2fabf5;
+  --color-brand-500: #0d8fe0;
+  --color-brand-600: #017cc2;
+  --color-brand-700: #0463a0;
+  --color-brand-800: #075284;
+  --color-brand-900: #0b446e;
+
+  --color-accent-50: #fef2f2;
+  --color-accent-100: #fde3e2;
+  --color-accent-200: #fbcbc9;
+  --color-accent-300: #f7a5a2;
+  --color-accent-400: #ef726d;
+  --color-accent-500: #e14943;
+  --color-accent-600: #dd2423;
+  --color-accent-700: #b91c1c;
+  --color-accent-800: #991b1b;
+  --color-accent-900: #7f1d1d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-jakarta);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-brand-50: var(--color-brand-50);
+  --color-brand-100: var(--color-brand-100);
+  --color-brand-200: var(--color-brand-200);
+  --color-brand-300: var(--color-brand-300);
+  --color-brand-400: var(--color-brand-400);
+  --color-brand-500: var(--color-brand-500);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-700: var(--color-brand-700);
+  --color-brand-800: var(--color-brand-800);
+  --color-brand-900: var(--color-brand-900);
+
+  --color-accent-50: var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
+
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-marquee: marquee 28s linear infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.prose-legacy {
+  line-height: 1.75;
+}
+.prose-legacy p {
+  margin-bottom: 1em;
+}
+.prose-legacy strong {
+  color: inherit;
+  font-weight: 600;
+}
+.prose-legacy table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  margin: 1.25em 0;
+}
+.prose-legacy table td,
+.prose-legacy table th {
+  border: 1px solid #e2e8f0;
+  padding: 0.6em 0.8em;
+  text-align: left;
+  white-space: normal;
+}
+.prose-legacy a {
+  color: var(--color-brand-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: break-word;
+}
+.prose-legacy img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+.prose-legacy,
+.prose-legacy * {
+  overflow-wrap: anywhere;
+}
+* {
+  min-width: 0;
+}
+html,
+body {
+  overflow-x: hidden;
 }
