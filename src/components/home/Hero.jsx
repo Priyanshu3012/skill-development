@@ -33,7 +33,10 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-slate-950">
-      <div className="relative h-[52vh] min-h-[380px] max-h-[640px] w-full" ref={emblaRef}>
+      <div
+        className="relative h-[640px] min-h-[640px] w-full sm:h-[560px] sm:min-h-[560px] md:h-[52vh] md:min-h-[420px] md:max-h-[640px]"
+        ref={emblaRef}
+      >
         <div className="flex h-full">
           {items.map((slide) => (
             <div key={slide.id} className="relative h-full min-w-0 flex-[0_0_100%]">
